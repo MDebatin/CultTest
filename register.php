@@ -4,7 +4,7 @@ include('server.php') ?>
 <html>
 <head>
     <title>Registration system PHP and MySQL</title>
-    <link rel="stylesheet" type="text/css" href="cadastro.css">
+    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />

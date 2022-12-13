@@ -1,6 +1,6 @@
 <?php
 
-include ('server.php');
+include('server.php');
 // connect to the database
 $conn = mysqli_connect('localhost', 'root', '', 'teste');
 $username= $_SESSION['username'];

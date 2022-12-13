@@ -1,5 +1,5 @@
 <?php
-require ('server.php');
+require('server.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,7 +8,7 @@ require ('server.php');
     <title>Conselho Muncipal de Cultura de Brusque - SC</title>
     <meta charsert='UTF-8' />
     <meta name="viewport" content="width=device-width,user-scalable=0" />
-    <link rel="stylesheet" type="text/css" href="user2.css"/>
+    <link rel="stylesheet" type="text/css" href="css/user2.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
@@ -31,7 +31,7 @@ require ('server.php');
                     <ul>
                         <li> <a style="color: white; text-decoration: none;" href="painel.php">HOME</a></li>
                         <li> <a style="color: white; text-decoration: none;" href="upload.php">PERFIL</a></li>
-                        <li> <a style="color: white; text-decoration: none;" href="logout.php">SAIR</a></li>
+                        <li> <a style="color: white; text-decoration: none;" href="Classes/logout.php">SAIR</a></li>
                     </ul>
                 </nav>
             </div>

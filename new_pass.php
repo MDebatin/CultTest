@@ -13,7 +13,7 @@ if(isset($_GET['token']))
 <head>
     <meta charset="UTF-8">
     <title>Password Reset PHP</title>
-    <link rel="stylesheet" href="emailsend.css">
+    <link rel="stylesheet" href="css/emailsend.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />

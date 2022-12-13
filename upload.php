@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="upload_down.css" />
+    <link rel="stylesheet" type="text/css" href="css/upload_down.css" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
@@ -25,7 +25,7 @@
                     <ul>
                         <li> <a style="color: white; text-decoration: none;" href="painel.php">HOME</a></li>
                         <li> <a style="color: white; text-decoration: none;" href="user.php">PERFIL</a></li>
-                        <li> <a style="color: white; text-decoration: none;" href="logout.php">SAIR</a></li>
+                        <li> <a style="color: white; text-decoration: none;" href="Classes/logout.php">SAIR</a></li>
                     </ul>
                 </nav>
             </div>
