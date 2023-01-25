@@ -1,5 +1,8 @@
 <?php
-include('server.php') ?>
+require_once 'autoload.php';
+
+$usuario = new Usuario();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,40 +35,40 @@ include('server.php') ?>
         </div>
     </div>
 </header>
+<form action="register.php" method="post">
+    <label for="username">Nome de usuário:</label>
+    <input type="text" name="username" required>
 
-<form class="box_totalogin "method="post" action="register.php">
-    <?php include('errors.php'); ?>
-    <div class="tetx_login">
-        <p> Usuário: </p>
-        <input type="text" name="username" value="<?php echo $username; ?>">
-    </div>
-    <div class="tetx_login">
-        <p> Nome Completo: </p>
-        <input type="text" name="name" value="<?php echo $name; ?>">
-    </div>
-    <div class="tetx_login">
-        <p> Email: </p>
-        <input type="email" name="email" value="<?php echo $email; ?>">
-    </div>
-    <div class="tetx_login">
-        <p> Telefone: </p>
-        <input type="tel" name="phone">
-    </div>
-    <div class="tetx_login">
-        <p> Senha: </p>
-        <input type="password" name="password_1">
-    </div>
-    <div class="tetx_login">
-        <p> Confirmar Senha: </p>
-        <input type="password" name="password_2">
-    </div>
-    <div class="entrar">
-        <button type="submit" class="entrar" name="reg_user">Cadastrar</button>
-    </div>
-    <p class = 'tetx_login'>
+    <label for="name">Nome completo:</label>
+    <input type="text" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+
+    <label for="phone">Telefone:</label>
+    <input type="tel" name="phone" required>
+
+    <label for="password_1">Senha:</label>
+    <input type="password" name="password_1" required>
+
+    <label for="password_2">Confirme a senha:</label>
+    <input type="password" name="password_2" required>
+
+    <input type="submit" name="reg_user" value="Cadastrar">
+
+    <p class="tetx_login">
         Já possui conta? <a class="tetx_login" href="logon.php">Entre</a>
     </p>
 </form>
+<?php
+if (isset($_POST['reg_user'])) {
+    $usuario = new Usuario();
+    $usuario->cadastrarUsuario($_POST);
+    if(count($usuario->getErrors()) > 0) {
+        var_dump($usuario->getErrors());
+    }
+}
+?>
 <footer>
     <div class="fim">
         <h1>Contato: conselho@fcbrusque.sc.gov.br</h1>
