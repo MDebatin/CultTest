@@ -1,5 +1,6 @@
 <?php
+require_once 'Usuario.php';
 session_start();
-session_destroy();
-header('Location: index.html');
-exit();
+$usuario = new Usuario();
+$usuario->logout();
+?>

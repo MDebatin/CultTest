@@ -1,4 +1,16 @@
-<?php include('server.php') ?>
+<?php
+require_once 'autoload.php';
+session_start();
+
+$usuario = new Usuario();
+
+if (isset($_POST['login_user'])) {
+    $usuario->loginUsuario($_POST);
+    if(count($usuario->getErrors()) > 0) {
+        var_dump($usuario->getErrors());
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +44,6 @@
     </div>
 </header>
 <form class="box_totalogin" method="post" action="logon.php">
-    <?php include('errors.php'); ?>
     <div class="tetx_login">
         <p> Usuário: </p>
         <input type="text" name="username" >

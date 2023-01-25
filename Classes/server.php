@@ -1,13 +1,15 @@
 <?php
 session_start();
+require('Classes/Conexao.php');
 
 // Inicializa variaveis
 $username = "";
-$email    = "";
+$email = "";
 $phone = "";
 $name = "";
 $errors = array();
 
+$Conexao = new Conexao();
 // conecta com a DB
 $db = mysqli_connect('localhost', 'root', '', 'teste');
 
@@ -23,11 +25,21 @@ if (isset($_POST['reg_user'])) {
 
     // valida o formulario, se esta inserindo tudo corretamente ...
     // by adding (array_push()) corresponding error unto $errors array
-    if (empty($username)) { array_push($errors, "Usuário é necessário!"); }
-    if (empty($name)) { array_push($errors, "Nome é necessário!"); }
-    if (empty($email)) { array_push($errors, "Email é necessário!"); }
-    if (empty($phone)) { array_push($errors, "Telefone é necessário!"); }
-    if (empty($password_1)) { array_push($errors, "Senha é necessário!"); }
+    if (empty($username)) {
+        array_push($errors, "Usuário é necessário!");
+    }
+    if (empty($name)) {
+        array_push($errors, "Nome é necessário!");
+    }
+    if (empty($email)) {
+        array_push($errors, "Email é necessário!");
+    }
+    if (empty($phone)) {
+        array_push($errors, "Telefone é necessário!");
+    }
+    if (empty($password_1)) {
+        array_push($errors, "Senha é necessário!");
+    }
     if ($password_1 != $password_2) {
         array_push($errors, "As senhas não coincidem!");
     }
@@ -52,8 +64,8 @@ if (isset($_POST['reg_user'])) {
     if (count($errors) == 0) {
         $password = md5($password_1);//encrypt the password before saving in the database
 
-        $query = "INSERT INTO users (username, name, email, phone, password) 
-  			  VALUES('$username','$name', '$email','$phone', '$password')";
+        $query = "insert into users (username, name, email, phone, password) 
+  			  values('$username','$name', '$email','$phone', '$password')";
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['email'] = $email;
@@ -92,7 +104,8 @@ if (isset($_POST['login_user'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['success'] = "You are now logged in";
             header('location: painel.php');
-        }else {
+        }
+        else {
             array_push($errors, "<p class='tetx_login'>Usuário ou senha incorretos!");
         }
     }

@@ -13,4 +13,12 @@ class Conexao {
         }
         return $conexao;
     }
+
+    public function query($query) {
+        return $this->conectar()->query($query);
+    }
+
+    public function fetchAssoc($result) {
+        return $result->fetch_assoc();
+    }
 }

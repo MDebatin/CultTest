@@ -60,6 +60,7 @@ $usuario = new Usuario();
         Já possui conta? <a class="tetx_login" href="logon.php">Entre</a>
     </p>
 </form>
+
 <?php
 if (isset($_POST['reg_user'])) {
     $usuario = new Usuario();
@@ -69,6 +70,7 @@ if (isset($_POST['reg_user'])) {
     }
 }
 ?>
+
 <footer>
     <div class="fim">
         <h1>Contato: conselho@fcbrusque.sc.gov.br</h1>

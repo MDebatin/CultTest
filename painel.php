@@ -1,4 +1,5 @@
 <?php
+require_once 'autoload.php';
 session_start();
 ?>
 
@@ -35,10 +36,8 @@ session_start();
                             <li onclick="membros()">MEMBROS</li>
                             <li onclick="editais()">EDITAIS</li>
                             <li onclick="irlei()">LEI</li>
-                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;"
-                                    href="user.php">PERFIL</a></li>
-                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;"
-                                    href="Classes/logout.php">SAIR</a></li>
+                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="user.php">PERFIL</a></li>
+                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="Classes/logout.php">SAIR</a></li>
                         </ul>
                     </nav>
                 </div>

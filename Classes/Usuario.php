@@ -57,10 +57,10 @@ class Usuario {
 
         // Finally, register user if there are no errors in the form
         if (count($this->errors) == 0) {
-            $this->password = md5($password_1);//encrypt the password before saving in the database
+            $this->password = password_hash($password_1, PASSWORD_DEFAULT);//encrypt the password before saving in the database
 
             $query = "insert into users (username, name, email, phone, password) 
-                    values('$this->username','$this->name', '$this->email','$this->phone', '$this->password')";
+                values('$this->username','$this->name', '$this->email','$this->phone', '$this->password')";
             mysqli_query($db, $query);
             $_SESSION['username'] = $this->username;
             $_SESSION['email'] = $this->email;
@@ -76,9 +76,8 @@ class Usuario {
     }
 
     public function loginUsuario($post) {
-        $db = $this->conexao->conectar();
-        $this->username = mysqli_real_escape_string($this->db, $post['username']);
-        $password = mysqli_real_escape_string($this->db, $post['password']);
+        $this->username = mysqli_real_escape_string($this->conexao->conectar(), $post['username']);
+        $password = mysqli_real_escape_string($this->conexao->conectar(),$post['password']);
 
         if (empty($this->username)) {
             array_push($this->errors, "<p class='tetx_login'>Usuário necessário!");
@@ -89,19 +88,19 @@ class Usuario {
 
         if (count($this->errors) == 0) {
             $query = "SELECT password FROM users WHERE username='$this->username' LIMIT 1";
-            $result = mysqli_query($this->db, $query);
-            $senhaCriptografada = mysqli_fetch_assoc($result)['password'];
+            $result = $this->conexao->query($query);
+            $senhaCriptografada = $this->conexao->fetchAssoc($result)['password'];
             if (password_verify($password, $senhaCriptografada)) {
-            $query = "SELECT * FROM users WHERE username='$this->username' LIMIT 1";
-            $results = mysqli_query($this->db, $query);
-            $user = mysqli_fetch_assoc($results);
+                $query = "SELECT * FROM users WHERE username='$this->username' LIMIT 1";
+                $results = $this->conexao->query($query);
+                $user = $this->conexao->fetchAssoc($results);
 
-            $_SESSION['username'] = $user['name'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['phone'] = $user['phone'];
-            $_SESSION['name'] = $user['name'];
-            $_SESSION['success'] = "You are now logged in";
-            header('location: painel.php');
+                $_SESSION['username'] = $user['name'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['phone'] = $user['phone'];
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['success'] = "You are now logged in";
+                header('location: painel.php');
             } else {
                 array_push($this->errors, "<p class='tetx_login'>Usuário ou senha incorretos!");
             }
@@ -111,7 +110,7 @@ class Usuario {
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: index.html');
+        header('Location: \CulturaBQ\index.html');
         exit();
     }
 }
