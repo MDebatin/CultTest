@@ -1,16 +1,14 @@
 <?php
-require_once 'autoload.php';
-session_start();
+require_once 'config.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <title>Conselho Muncipal de Cultura de Brusque - SC</title>
     <meta charsert='UTF-8' />
     <meta name="viewport" content="width=device-width,user-scalable=0" />
-    <link rel="stylesheet" type="text/css" href="css/stylepag.css" />
+    <link rel="stylesheet" type="text/css" href="../css/stylepag.css" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
@@ -21,12 +19,12 @@ session_start();
         <div class="box_header">
             <div class="info_header">
                 <span class="namepag">Conselho Municipal de Cultura - Brusque - SC</span>
-                <img class="logobq" src="image/logo_bq.png" />
+                <img class="logobq" src="../image/logo_bq.png" />
                 <span class="contato">conselho@fcbrusque.sc.gov.br</span>
             </div>
             <div class="faixa_menu">
                 <div class="logo">
-                    <img class="logo_name" src="image/logo.png" />
+                    <img class="logo_name" src="../image/logo.png" />
                 </div>
                 <div class="menu">
                     <nav>
@@ -37,7 +35,7 @@ session_start();
                             <li onclick="editais()">EDITAIS</li>
                             <li onclick="irlei()">LEI</li>
                             <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="user.php">PERFIL</a></li>
-                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="Classes/logout.php">SAIR</a></li>
+                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="Usuario()-<">SAIR</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -46,7 +44,7 @@ session_start();
     </header>
     <section>
         <div class="box_banner">
-            <img class="image_banner" src="image/banner.jpg" />
+            <img class="image_banner" src="../image/banner.jpg" />
         </div>
 
         <div class="box_totalogin">
@@ -57,11 +55,11 @@ session_start();
                 Digite sua senha:
                 <input type="password" name="password" required /> <br /><br />
                 Entrar como Usuário:
-                <a href="usuario.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
+                <a href="../usuario.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
                 Entrar como Administrador:
-                <a href="admin.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
+                <a href="../admin.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
                 Entrar como Avaliador:
-                <a href="avaliador.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
+                <a href="../avaliador.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
                 <input type="submit" value="Fazer Cadastro" class="fcadastro" onclick="fazercadastro()" />
                 <input type="submit" value="Esqueceu sua senha" class="senhaesq" onclick="esqsen()" />
             </label>
@@ -121,7 +119,7 @@ session_start();
                     artísticas por entidades públicas e privadas.</p>
             </div>
             <div class="boximg1">
-                <img class="fbq" src="image/fundbq.png" />
+                <img class="fbq" src="../image/fundbq.png" />
                 <h1 class="textimg">Conselho Municipal de Cultura de Brusque - SC</h1>
             </div>
         </div>
@@ -231,29 +229,29 @@ session_start();
         </div>
         <div class="box-editais">
             <h1>2021</h1>
-            <p><a href="editais/primeiro.pdf" target="_blank"> EDITAL-DE-CONCURSO-03.2021-FCB-PREMIO-WILSON-SANTOS-1
+            <p><a href="../editais/primeiro.pdf" target="_blank"> EDITAL-DE-CONCURSO-03.2021-FCB-PREMIO-WILSON-SANTOS-1
                 </a></p>
-            <p><a href="editais/segundo.odt" target="_blank">
+            <p><a href="../editais/segundo.odt" target="_blank">
                     Primeira_Retificacao_Edital_03.2021_FCB-Premio_Wilson_Santos</a></p>
 
             <h1>2019</h1>
-            <p><a href="editais/terceiro.pdf" target="_blank">Documento-DOM-Habilitados-Final-Edital-02.2019-FMAC</a>
+            <p><a href="../editais/terceiro.pdf" target="_blank">Documento-DOM-Habilitados-Final-Edital-02.2019-FMAC</a>
             </p>
-            <p><a href="editais/quarto.pdf" target="_blank">Edital-02.2019-FMAC</a></p>
-            <p><a href="editais/quinto.pdf" target="_blank">ERRATA-EDITAL-02.2019-FMAC</a></p>
-            <p><a href="editais/sexto.pdf" target="_blank">Listagem-Classificacao-Final-Edital-02.2019-FMAC</a></p>
+            <p><a href="../editais/quarto.pdf" target="_blank">Edital-02.2019-FMAC</a></p>
+            <p><a href="../editais/quinto.pdf" target="_blank">ERRATA-EDITAL-02.2019-FMAC</a></p>
+            <p><a href="../editais/sexto.pdf" target="_blank">Listagem-Classificacao-Final-Edital-02.2019-FMAC</a></p>
 
             <h1>2018</h1>
-            <p><a href="editais/setimo.pdf" target="_blank">1530746173_edital_012018_fmacerrata</a></p>
-            <p><a href="editais/oitavo.pdf"
+            <p><a href="../editais/setimo.pdf" target="_blank">1530746173_edital_012018_fmacerrata</a></p>
+            <p><a href="../editais/oitavo.pdf"
                     target="_blank">1531428670_edital_0012018_fmac_relatrio_final_da_habilitacao_dos_projetos_inscritos</a>
             </p>
-            <p><a href="editais/nono.pdf" target="_blank">1532984505_edital_n_01_2018fmacprorrogao_de_prazos</a></p>
+            <p><a href="../editais/nono.pdf" target="_blank">1532984505_edital_n_01_2018fmacprorrogao_de_prazos</a></p>
             <p><a href="editais/decimo" target="_blank">1534017293_edital_012018_fmaccmcfcb</a></p>
-            <p><a href="editais/decimopri.pdf" target="_blank">Edital-Completo-da-Cultura-001-2018-</a></p>
+            <p><a href="../editais/decimopri.pdf" target="_blank">Edital-Completo-da-Cultura-001-2018-</a></p>
 
             <h1>2017</h1>
-            <p class="ult"><a href="editais/decimoseg.pdf" target="_blank">Edital-CMC-2017</a></p>
+            <p class="ult"><a href="../editais/decimoseg.pdf" target="_blank">Edital-CMC-2017</a></p>
 
         </div>
         <div class="back_faixa">
@@ -265,7 +263,7 @@ session_start();
         </div>
         <div class="lei_ver" onclick="verlei()">
             VER LEI COMPLETA
-            <img class="setinha" src="image/seta.png" />
+            <img class="setinha" src="../image/seta.png" />
         </div>
         <div class="lei">
             <p>O PREFEITO MUNICIPAL DE BRUSQUE, Faço saber que a Câmara Municipal aprovou e eu sanciono e promulgo a
@@ -361,7 +359,7 @@ session_start();
             <p>Página criada pelos alunos da segunda fase de Sistemas de Informação - Unifebe - Brusque - SC</p>
         </div>
     </footer>
-    <script type="text/javascript" src="curri.js"></script>
+    <script type="text/javascript" src="../js/curri.js"></script>
 </body>
 
 </html>

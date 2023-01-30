@@ -1,9 +1,7 @@
 <?php
-require_once 'autoload.php';
-session_start();
+require_once 'config.php';
 
 $usuario = new Usuario();
-
 if (isset($_POST['login_user'])) {
     $usuario->loginUsuario($_POST);
     if(count($usuario->getErrors()) > 0) {
@@ -15,7 +13,7 @@ if (isset($_POST['login_user'])) {
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/logar.css">
+    <link rel="stylesheet" type="text/css" href="../css/logar.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
@@ -25,17 +23,17 @@ if (isset($_POST['login_user'])) {
     <div class="box_header">
         <div class="info_header">
             <span class="namepag">Conselho Municipal de Cultura - Brusque - SC</span>
-            <img class="logobq" src="image/logo_bq.png"/>
+            <img class="logobq" src="../image/logo_bq.png"/>
             <span class="contato">conselho@fcbrusque.sc.gov.br</span>
         </div>
         <div class="faixa_menu">
             <div class="logo">
-                <img class="logo_name" src="image/logo.png"/>
+                <img class="logo_name" src="../image/logo.png"/>
             </div>
             <div class="menu">
                 <nav>
                     <ul>
-                        <li> <a style="color: white; text-decoration: none;" href="index.html">HOME</a></li>
+                        <li> <a style="color: white; text-decoration: none;" href="../index.html">HOME</a></li>
                         <li> <a style="color: white; text-decoration: none;" href="logon.php">LOGIN</a></li>
                     </ul>
                 </nav>

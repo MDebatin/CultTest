@@ -1,8 +1,13 @@
-<?php include 'filesLogic.php';?>
+<?php
+require_once 'config.php';
+
+$arquivos = new Arquivos();
+$files = $arquivos->listarArquivos();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/upload_down.css" />
+    <link rel="stylesheet" type="text/css" href="../css/upload_down.css" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
@@ -13,19 +18,19 @@
     <div class="box_header">
         <div class="info_header">
             <span class="namepag">Conselho Municipal de Cultura - Brusque - SC</span>
-            <img class="logobq" src="image/logo_bq.png" />
+            <img class="logobq" src="../image/logo_bq.png" />
             <span class="contato">conselho@fcbrusque.sc.gov.br</span>
         </div>
         <div class="faixa_menu">
             <div class="logo">
-                <img class="logo_name" src="image/logo.png" />
+                <img class="logo_name" src="../image/logo.png" />
             </div>
             <div class="menu">
                 <nav>
                     <ul>
                         <li> <a style="color: white; text-decoration: none;" href="painel.php">HOME</a></li>
                         <li> <a style="color: white; text-decoration: none;" href="user.php">PERFIL</a></li>
-                        <li> <a style="color: white; text-decoration: none;" href="Classes/logout.php">SAIR</a></li>
+                        <li> <a style="color: white; text-decoration: none;" href="../Classes/logout.php">SAIR</a></li>
                     </ul>
                 </nav>
             </div>
