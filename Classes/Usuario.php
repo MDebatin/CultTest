@@ -133,5 +133,67 @@ class Usuario
         header('Location: \CulturaBQ\index.html');
         exit();
     }
+
+
+    // Esta função reseta a senha do usuário
+    public function redefinirSenha() {
+        if (isset($_POST['redefinir-senha'])) {
+            $email = $this->conexao->real_escape_string($_POST['email']);
+            $query = "SELECT email FROM usuarios WHERE email='$email'";
+            $resultados = $this->conexao->query($query);
+
+            if (empty($email)) {
+                array_push($this->errors, "O seu email é obrigatório");
+            }
+            elseif ($this->conexao->num_rows($resultados) <= 0) {
+                array_push($this->errors, "Desculpe, não existe nenhum usuário em nosso sistema com esse email");
+            }
+            $token = bin2hex(random_bytes(50));
+
+            if (count($this->errors) == 0) {
+                $sql = "INSERT INTO redefinir_senha(email, token) VALUES ('$email', '$token')";
+                $resultados = $this->conexao->query($sql);
+
+                $para = $email;
+                $assunto = "Redefina sua senha em examplesite.com";
+                $msg = "Olá, clique neste <a href='nova_senha.php?token=" . $token . "'>link</a> para redefinir sua senha em nosso site";
+                $msg = wordwrap($msg, 70);
+                $cabecalhos = "De: info@examplesite.com";
+                mail($para, $assunto, $msg, $cabecalhos);
+                header('location: pendente.php?email=' . $email);
+            }
+        }
+        if (isset($_GET['token'])) {
+            $_SESSION['token'] = $this->conexao->real_escape_string($_GET['token']);
+        }
+        if (isset($_POST['nova_senha'])) {
+            $nova_senha = $this->conexao->real_escape_string($_POST['nova_senha']);
+            $nova_senha_c = $this->conexao->real_escape_string($_POST['nova_senha_c']);
+
+            $token = $_SESSION['token'];
+            if (empty($nova_senha) || empty($nova_senha_c)) {
+                array_push($this->errors, "Senha é obrigatória");
+            }
+            if ($nova_senha !== $nova_senha_c) {
+                array_push($this->errors, "As senhas não correspondem");
+            }
+            if (count($this->errors) == 0) {
+                $sql = "SELECT email FROM redefinir_senha WHERE token='$token' LIMIT 1";
+                $result = $this->conexao->query($sql);
+                if ($result->num_rows == 1) {
+                    $email = $result->fetch_assoc()["email"];
+                    $senha = password_hash($nova_senha, PASSWORD_DEFAULT);
+                    $sql = "UPDATE usuarios SET password='$senha' WHERE email='$email'";
+                    if ($this->conexao->query($sql)) {
+                        $sql = "DELETE FROM redefinir_senha WHERE email='$email'";
+                        $this->conexao->query($sql);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+    }
 }
+
 
