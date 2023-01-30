@@ -8,10 +8,11 @@ require_once 'config.php';
     <title>Conselho Muncipal de Cultura de Brusque - SC</title>
     <meta charsert='UTF-8' />
     <meta name="viewport" content="width=device-width,user-scalable=0" />
-    <link rel="stylesheet" type="text/css" href="../css/stylepag.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@ require_once 'config.php';
                             <li onclick="editais()">EDITAIS</li>
                             <li onclick="irlei()">LEI</li>
                             <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="user.php">PERFIL</a></li>
-                            <li onclick="aparecerlogin()"> <a style="color: white; text-decoration: none;" href="Usuario()-<">SAIR</a></li>
+                            <li onclick="logout()"> <a style="color: white; text-decoration: none;">SAIR</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -45,45 +46,6 @@ require_once 'config.php';
     <section>
         <div class="box_banner">
             <img class="image_banner" src="../image/banner.jpg" />
-        </div>
-
-        <div class="box_totalogin">
-            <h1 class="login">LOGIN</h1>
-            <label class="tetx_login">
-                Digite seu e-mail:
-                <input type="e-mail" name="e-mail" required /> <br /><br />
-                Digite sua senha:
-                <input type="password" name="password" required /> <br /><br />
-                Entrar como Usuário:
-                <a href="../usuario.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
-                Entrar como Administrador:
-                <a href="../admin.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
-                Entrar como Avaliador:
-                <a href="../avaliador.html"><input type="submit" value="Entrar" class="entrar" /></a> <br /><br /><br />
-                <input type="submit" value="Fazer Cadastro" class="fcadastro" onclick="fazercadastro()" />
-                <input type="submit" value="Esqueceu sua senha" class="senhaesq" onclick="esqsen()" />
-            </label>
-        </div>
-        <div class="box_totalcadastro">
-            <h1>CADASTRO</h1>
-            <label>
-                Nome Completo:
-                <input type="text" name="nome" required /> <br /><br />
-                CPF:
-                <input type="number" name="cpf" required /> <br /><br />
-                Criar E-mail:
-                <input type="e-mail" name="e-mail" required /> <br /><br />
-                Confirmar E-mail:
-                <input type="e-mail" name="e-mail" required /> <br /><br />
-                Criar Senha:
-                <input type="password" name="senha" required /> <br /><br />
-                Confirmar Senha:
-                <input type="password" name="senha" required /> <br /><br />
-                Telefone/Celular
-                <input type="tel" name="tel" required /> <br /><br /><br />
-                <a href="paginicial.html"><input type="submit" value="Fazer Cadastro" class="ffcadastro" /></a>
-                <input type="submit" value="Voltar" class="fffcadastro" onclick="voltar1()" />
-            </label>
         </div>
         <div class="box_ajuda">
             <h1>AJUDA</h1>

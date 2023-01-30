@@ -11,6 +11,7 @@ $files = $arquivos->listarArquivos();
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Files Upload and Download</title>
 </head>
 <body>
@@ -30,7 +31,7 @@ $files = $arquivos->listarArquivos();
                     <ul>
                         <li> <a style="color: white; text-decoration: none;" href="painel.php">HOME</a></li>
                         <li> <a style="color: white; text-decoration: none;" href="user.php">PERFIL</a></li>
-                        <li> <a style="color: white; text-decoration: none;" href="../Classes/logout.php">SAIR</a></li>
+                        <li onclick="logout()"> <a style="color: white; text-decoration: none;">SAIR</a></li>
                     </ul>
                 </nav>
             </div>
@@ -71,5 +72,6 @@ $files = $arquivos->listarArquivos();
         <p>Página criada pelos alunos da segunda fase de Sistemas de Informação - Unifebe - Brusque - SC</p>
     </div>
 </footer>
+<script type="text/javascript" src="../js/curri.js"></script>
 </body>
 </html>

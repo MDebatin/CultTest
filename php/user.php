@@ -12,6 +12,7 @@ require('config.php');
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@ require('config.php');
                     <ul>
                         <li><a style="color: white; text-decoration: none;" href="painel.php">HOME</a></li>
                         <li><a style="color: white; text-decoration: none;" href="upload.php">PERFIL</a></li>
-                        <li><a style="color: white; text-decoration: none;" href="../Classes/logout.php">SAIR</a></li>
+                        <li onclick="logout()"><a style="color: white; text-decoration: none;">SAIR</a></li>
                     </ul>
                 </nav>
             </div>
