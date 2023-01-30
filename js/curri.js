@@ -70,3 +70,15 @@ function irlei() {
         behavior: 'smooth'
     });
 }
+
+function logout() {
+    $.ajax({
+        type: 'POST',
+        url: '../Classes/Usuario.php',
+        data: {action: 'logout'},
+        success: function(response) {
+            alert('Usuario deslogado!');
+            window.location.href = '/CulturaBQ/index.html';
+        }
+    });
+}
