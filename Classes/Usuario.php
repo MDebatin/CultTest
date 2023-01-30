@@ -1,5 +1,10 @@
 <?php
 require 'Conexao.php';
+
+if (isset($_POST['action']) && $_POST['action'] === 'logout') {
+    $usuario = new Usuario();
+    $usuario->logout();
+}
 class Usuario
 {
     private $username;
@@ -130,7 +135,6 @@ class Usuario
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: \CulturaBQ\index.html');
         exit();
     }
 
